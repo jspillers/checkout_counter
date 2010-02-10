@@ -1,0 +1,18 @@
+A toy checkout counter app that scans "products" and gives back a total with discounts for certain combinations of products
+
+usage:
+
+require '/path/to/where/you/put/this/thing/lib/checkout_counter.rb'
+
+terminal = CheckoutCounter::Terminal.new
+
+terminal.scan("A")
+terminal.scan("C")
+
+terminal.total
+=> 3.25
+
+run the specs
+
+$ cd /path/to/where/you/put/this/thing/
+$ spec spec/checkout_counter_spec.rb
