@@ -1,6 +1,8 @@
 module CheckoutCounter
   class Terminal
 
+    attr_reader :bulk_discount
+
     def initialize
       @scanned_products = []
       @bulk_discount = 0.0
@@ -24,7 +26,7 @@ module CheckoutCounter
       # probably use one of the purpose built money/currency 
       # libraries or use big decimal: 
       # (http://ruby-doc.org/stdlib/libdoc/bigdecimal/rdoc/index.html)
-      sprintf("%.2f", total - @bulk_discount).to_f
+      sprintf("%.2f", total - @bulk_discount)
     end
 
     private

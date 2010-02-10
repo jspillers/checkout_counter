@@ -12,7 +12,7 @@ describe CheckoutCounter::Terminal do
     end
 
     it "should return zero when no products have been scanned" do
-      @it.total.should == 0  
+      @it.total.should == "0.00" 
     end
 
     it "should raise an error when passed an invalid product code" do
@@ -21,22 +21,22 @@ describe CheckoutCounter::Terminal do
 
     it "should return the correct total for A" do
       @it.scan("A")
-      @it.total.should == 2.0
+      @it.total.should == "2.00"
     end
 
     it "should return the correct total for B" do
       @it.scan("B")
-      @it.total.should == 12.0
+      @it.total.should == "12.00"
     end
 
     it "should return the correct total for C" do
       @it.scan("C")
-      @it.total.should == 1.25
+      @it.total.should == "1.25"
     end
 
     it "should return the correct total for D" do
       @it.scan("D")
-      @it.total.should == 0.15
+      @it.total.should == "0.15"
     end
 
     describe "when products ABCDABAA are scanned" do
@@ -47,7 +47,7 @@ describe CheckoutCounter::Terminal do
       end
 
       it "#total should return the correct total" do
-        @it.total.should == 32.40
+        @it.total.should == "32.40"
       end
     end
 
@@ -59,7 +59,7 @@ describe CheckoutCounter::Terminal do
       end
 
       it "#total should return the correct total" do
-        @it.total.should == 64.80
+        @it.total.should == "64.80"
       end
     end
 
@@ -71,7 +71,7 @@ describe CheckoutCounter::Terminal do
       end
 
       it "#total should return the correct total" do
-        @it.total.should == 7.25
+        @it.total.should == "7.25"
       end
     end
 
@@ -83,7 +83,7 @@ describe CheckoutCounter::Terminal do
       end
 
       it "#total should return the correct total" do
-        @it.total.should == 15.40
+        @it.total.should == "15.40"
       end
     end
 
